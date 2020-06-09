@@ -1,6 +1,6 @@
 {
   "name": "async-await-mutex-lock",
-  "version": "v1.0.1",
+  "version": "v1.0.2",
   "description": "Mutex locks for async functions with functionality to add keys for separate locks",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,13 @@
     "build": "rimraf dist && tsc",
     "test:cov": "jest --coverage --verbose"
   },
+  "keywords": [
+    "promise",
+    "async",
+    "mutex",
+    "lock",
+    "await"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/malhotra-sidharth/async-await-mutex-lock.git"
