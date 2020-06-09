@@ -1,0 +1,22 @@
+{
+  "name": "async-await-mutex-lock",
+  "version": "1.0.0",
+  "description": "Mutex locks for async functions with functionality to add keys for separate locks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malhotra-sidharth/async-await-mutex-lock.git"
+  },
+  "author": "Sidharth Malhotra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malhotra-sidharth/async-await-mutex-lock/issues"
+  },
+  "homepage": "https://github.com/malhotra-sidharth/async-await-mutex-lock#readme",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
+}
