@@ -37,14 +37,13 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Install dependencies
+    - name: Install dependencies & run tests
       run: |
         export NPM_TOKEN=${{ secrets.NPM_TOKEN }}
         npm install
+        npm run test
+
+    - name: Publish to npm
+      run: |
         npm run build
         npm publish
-
-    - name: Run Tests
-      run: npm run test
-      env:
-        CI: true

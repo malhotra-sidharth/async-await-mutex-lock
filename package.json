@@ -1,6 +1,6 @@
 {
   "name": "async-await-mutex-lock",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "description": "Mutex locks for async functions with functionality to add keys for separate locks",
   "main": "index.js",
   "scripts": {
