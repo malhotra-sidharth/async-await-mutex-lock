@@ -28,4 +28,13 @@ describe("Lock Tests", () => {
     expect(lock.isAcquired(key)).toBe(false);
   })
 
+  it("throws error when released without acquiring without key", () => {
+    let lock = new Lock();
+    expect(() => lock.release()).toThrowError();
+  })
+
+  it("throws error when released without acquiring with key", () => {
+    let lock = new Lock<string>();
+    expect(() => lock.release("key")).toThrowError();
+  })
 })
