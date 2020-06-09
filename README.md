@@ -10,7 +10,7 @@ Mutex locks for async functions with functionality to use keys for separate lock
 
 #### Without Key
 ```javascript
-import Lock from "async-await-mutex-lock";
+import { Lock } from "async-await-mutex-lock";
 
 let lock = new Lock();
 
@@ -31,7 +31,7 @@ async function serialTask() {
 All the keys will have their own separate locks and separate waiting lists. A key can have
 any type (eg. string, number, etc. or a custom type allowed by typescript as a Map key)
 ```javascript
-import Lock from "async-await-mutex-lock";
+import { Lock } from "async-await-mutex-lock";
 
 let lock = new Lock<string>();
 
@@ -62,7 +62,7 @@ async function serialTaskTwo() {
 
 #### Checking if a lock is acquired or not
 ```javascript
-import Lock from "async-await-mutex-lock";
+import { Lock } from "async-await-mutex-lock";
 
 let lock = new Lock();
 
@@ -75,7 +75,7 @@ async function serialTask() {
 
 `isAcquired()` with `key` checks for the given key separately.
 ```javascript
-import Lock from "async-await-mutex-lock";
+import { Lock } from "async-await-mutex-lock";
 
 let lock = new Lock<string>();
 
