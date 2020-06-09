@@ -48,4 +48,4 @@ jobs:
         npm run build
         npm publish
       env:
-        NPM_TOKEN=${{ secrets.NPM_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
