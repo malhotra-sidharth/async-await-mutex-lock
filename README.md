@@ -1,7 +1,7 @@
 # Async Await Mutex Lock
-![Tests](https://github.com/malhotra-sidharth/async-await-mutex-lock/workflows/Running%20All%20Tests%20and%20Publish%20to%20NPM/badge.svg)
+![Tests](https://github.com/malhotra-sidharth/async-await-mutex-lock/workflows/Tests/badge.svg)
 
-Mutex locks for async functions with functionality to add keys for separate locks
+Mutex locks for async functions with functionality to use keys for separate locks
 
 [![NPM](https://nodei.co/npm/async-await-mutex-lock.png)](https://nodei.co/npm/async-await-mutex-lock/)
 
@@ -28,13 +28,14 @@ async function test(): Promise<void> {
 ```
 
 #### With Key
-All the keys will have their own separate locks and separate waiting lists;
+All the keys will have their own separate locks and separate waiting lists. A key can have
+any type (eg. string, number, etc. or a custom type allowed by typescript as a Map key)
 ```javascript
 import Lock from "async-await-mutex-lock";
 
 let lock = new Lock<string>();
 
-async function test(): Promise<void> {
+async function test() {
   await lock.acquire("myKey");
 
   try {
@@ -46,7 +47,7 @@ async function test(): Promise<void> {
   }
 }
 
-async function testTwo(): Promise<void> {
+async function testTwo() {
   await lock.acquire("myKeyTwo");
 
   try {
@@ -65,7 +66,7 @@ import Lock from "async-await-mutex-lock";
 
 let lock = new Lock();
 
-async function test(): Promise<void> {
+async function test() {
   await lock.acquire();
 
   console.log(lock.isAcquired()) // prints true
@@ -78,7 +79,7 @@ import Lock from "async-await-mutex-lock";
 
 let lock = new Lock<string>();
 
-async function test(): Promise<void> {
+async function test() {
   await lock.acquire("myKey");
 
   console.log(lock.isAcquired("myKey")) // prints true
@@ -86,9 +87,9 @@ async function test(): Promise<void> {
 ```
 
 
-### Issues or Bugs
+#### Issues or Bugs
 In case of any issues or bugs, please open a pull request [here](https://github.com/malhotra-sidharth/async-await-mutex-lock/pulls)
 
-###### Credits
+#### Credits
 This package has been inspired from [await-lock](https://www.npmjs.com/package/await-lock)
 with an added functionality of allowing keys and checking if lock has been acquired or not

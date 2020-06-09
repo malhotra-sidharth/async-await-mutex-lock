@@ -1,7 +1,7 @@
 {
   "name": "async-await-mutex-lock",
-  "version": "v1.0.2",
-  "description": "Mutex locks for async functions with functionality to add keys for separate locks",
+  "version": "v1.0.3",
+  "description": "Mutex locks for async functions with functionality to use keys for separate locks",
   "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles --verbose",
