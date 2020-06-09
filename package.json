@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles --verbose",
-    "build": "npm run test && rimraf dist && tsc"
+    "build": "npm run test && rimraf dist && tsc",
+    "test:cov": "jest --coverage --verbose"
   },
   "repository": {
     "type": "git",

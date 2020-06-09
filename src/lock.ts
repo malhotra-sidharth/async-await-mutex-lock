@@ -24,8 +24,11 @@ export class Lock<T> {
           this.waitingMap.set(key, resolvers);
         }
         else {
-          this.waitingList.push(resolve);
+          this.waitingMap.set(key, [resolve]);
         }
+      }
+      else {
+        this.waitingList.push(resolve);
       }
     })
   }
@@ -66,7 +69,7 @@ export class Lock<T> {
         throw new Error("Please acquire a lock before releasing!!");
       }
       else {
-        if (this.waitingList?.length > 0) {
+        if (this.waitingList.length > 0) {
           let resolve = this.waitingList.shift();
           resolve();
         }
