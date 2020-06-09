@@ -14,7 +14,7 @@ import Lock from "async-await-mutex-lock";
 
 let lock = new Lock();
 
-async function test(): Promise<void> {
+async function serialTask() {
   await lock.acquire();
 
   try {
@@ -35,7 +35,7 @@ import Lock from "async-await-mutex-lock";
 
 let lock = new Lock<string>();
 
-async function test() {
+async function serialTask() {
   await lock.acquire("myKey");
 
   try {
@@ -47,7 +47,7 @@ async function test() {
   }
 }
 
-async function testTwo() {
+async function serialTaskTwo() {
   await lock.acquire("myKeyTwo");
 
   try {
@@ -66,7 +66,7 @@ import Lock from "async-await-mutex-lock";
 
 let lock = new Lock();
 
-async function test() {
+async function serialTask() {
   await lock.acquire();
 
   console.log(lock.isAcquired()) // prints true
@@ -79,7 +79,7 @@ import Lock from "async-await-mutex-lock";
 
 let lock = new Lock<string>();
 
-async function test() {
+async function serialTask() {
   await lock.acquire("myKey");
 
   console.log(lock.isAcquired("myKey")) // prints true
