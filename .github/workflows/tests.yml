@@ -1,10 +1,9 @@
-name: Running All Tests
+name: Running All Tests and Publish to NPM
 
 on:
-  pull_request:
-    branches:
-      - master
-      - develop
+  push:
+    tags:
+      - '*-prod'
 
 jobs:
   build:
@@ -22,8 +21,28 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    # https://github.com/olegtarasov/get-tag
+    - name: Get Tag Name
+      uses: olegtarasov/get-tag@v2
+      id: tagName
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.tagName.outputs.tag }}
+        release_name: ${{ steps.tagName.outputs.tag }}
+        draft: false
+        prerelease: false
+
     - name: Install dependencies
-      run: npm install
+      run: |
+        export NPM_TOKEN=${{ secrets.NPM_TOKEN }}
+        npm install
+        npm run build
+        npm publish
 
     - name: Run Tests
       run: npm run test
