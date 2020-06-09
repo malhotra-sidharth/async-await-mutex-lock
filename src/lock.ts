@@ -16,7 +16,6 @@ export class Lock<T> {
       return Promise.resolve();
     }
 
-
     return new Promise((resolve, reject) => {
       if (key) {
         if (this.waitingMap.has(key)) {
@@ -53,7 +52,7 @@ export class Lock<T> {
         );
       }
       else {
-        if (this.waitingMap.get(key).length > 0) {
+        if (this.waitingMap.get(key)?.length > 0) {
           let resolve = this.waitingMap.get(key).shift();
           resolve();
         }
@@ -67,7 +66,7 @@ export class Lock<T> {
         throw new Error("Please acquire a lock before releasing!!");
       }
       else {
-        if (this.waitingList.length > 0) {
+        if (this.waitingList?.length > 0) {
           let resolve = this.waitingList.shift();
           resolve();
         }
