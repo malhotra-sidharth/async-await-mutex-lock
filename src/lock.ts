@@ -60,6 +60,10 @@ export class Lock<T> {
           resolve();
         }
         else {
+          if (this.waitingMap.has(key)) {
+            this.waitingMap.delete(key);
+          }
+
           this._acquiredMap.set(key, false);
         }
       }
