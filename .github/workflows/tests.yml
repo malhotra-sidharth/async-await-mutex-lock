@@ -23,7 +23,7 @@ jobs:
 
     # https://github.com/olegtarasov/get-tag
     - name: Get Tag Name
-      uses: olegtarasov/get-tag@v2
+      uses: olegtarasov/get-tag@v2.1
       id: tagName
 
     - name: Create Release

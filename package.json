@@ -1,6 +1,6 @@
 {
   "name": "async-await-mutex-lock",
-  "version": "v1.0.6",
+  "version": "v1.0.7",
   "description": "Mutex locks for async functions with functionality to use keys for separate locks",
   "main": "dist/index",
   "types": "dist/index",
@@ -28,22 +28,22 @@
   "homepage": "https://github.com/malhotra-sidharth/async-await-mutex-lock#readme",
   "devDependencies": {
     "@types/jest": "^25.2.3",
-    "jest": "^26.0.1",
-    "ts-jest": "^26.1.0",
-    "typescript": "^3.9.5"
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.3",
+    "typescript": "^3.9.9"
   },
   "jest": {
-  "moduleFileExtensions": [
-    "js",
-    "json",
-    "ts"
-  ],
-  "rootDir": "src",
-  "testRegex": ".spec.ts$",
-  "transform": {
-    "^.+\\.(t|j)s$": "ts-jest"
-  },
-  "coverageDirectory": "../coverage",
-  "testEnvironment": "node"
-}
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
 }
