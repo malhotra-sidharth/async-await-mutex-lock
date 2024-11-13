@@ -51,6 +51,7 @@ jobs:
       - name: Publish to npm
         run: |
           npm install
+          npm i -g rimraf
           npm run build
           npm publish
         env:
